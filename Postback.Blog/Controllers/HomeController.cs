@@ -10,7 +10,7 @@ namespace Postback.Blog.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Message = "Dummy site";
+            ViewBag.Message = "Postback Blog";
 
             return View();
         }
