@@ -10,13 +10,8 @@ namespace Postback.Blog.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Message = "Welcome to ASP.NET MVC!";
+            ViewBag.Message = "Dummy site";
 
-            return View();
-        }
-
-        public ActionResult About()
-        {
             return View();
         }
     }
