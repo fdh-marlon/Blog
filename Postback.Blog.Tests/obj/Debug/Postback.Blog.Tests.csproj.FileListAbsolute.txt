@@ -1,0 +1,8 @@
+C:\_projects\blog\Postback.Blog.Tests\bin\Debug\Postback.Blog.Tests.dll.config
+C:\_projects\blog\Postback.Blog.Tests\bin\Debug\Postback.Blog.Tests.dll
+C:\_projects\blog\Postback.Blog.Tests\bin\Debug\Postback.Blog.Tests.pdb
+C:\_projects\blog\Postback.Blog.Tests\bin\Debug\Postback.Blog.dll
+C:\_projects\blog\Postback.Blog.Tests\bin\Debug\Postback.Blog.pdb
+C:\_projects\blog\Postback.Blog.Tests\obj\Debug\ResolveAssemblyReference.cache
+C:\_projects\blog\Postback.Blog.Tests\obj\Debug\Postback.Blog.Tests.dll
+C:\_projects\blog\Postback.Blog.Tests\obj\Debug\Postback.Blog.Tests.pdb

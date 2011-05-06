@@ -1,0 +1,7 @@
+C:\_projects\blog\Postback.Blog\bin\Postback.Blog.dll
+C:\_projects\blog\Postback.Blog\bin\Postback.Blog.pdb
+C:\_projects\blog\Postback.Blog\bin\EntityFramework.dll
+C:\_projects\blog\Postback.Blog\bin\EntityFramework.xml
+C:\_projects\blog\Postback.Blog\obj\Debug\ResolveAssemblyReference.cache
+C:\_projects\blog\Postback.Blog\obj\Debug\Postback.Blog.dll
+C:\_projects\blog\Postback.Blog\obj\Debug\Postback.Blog.pdb
