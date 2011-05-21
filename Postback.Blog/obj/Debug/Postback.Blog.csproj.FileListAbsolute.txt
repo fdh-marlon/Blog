@@ -3,3 +3,14 @@ C:\_projects\blog\Postback.Blog\bin\Postback.Blog.pdb
 C:\_projects\blog\Postback.Blog\obj\Debug\ResolveAssemblyReference.cache
 C:\_projects\blog\Postback.Blog\obj\Debug\Postback.Blog.dll
 C:\_projects\blog\Postback.Blog\obj\Debug\Postback.Blog.pdb
+C:\_projects\blog\Postback.Blog\bin\Norm.dll
+C:\_projects\blog\Postback.Blog\bin\Norm.pdb
+C:\_projects\blog\Postback.Blog\bin\Norm.xml
+C:\_projects\blog\Postback.Blog\bin\AutoMapper.dll
+C:\_projects\blog\Postback.Blog\bin\Microsoft.Web.Mvc.dll
+C:\_projects\blog\Postback.Blog\bin\DataAnnotationsExtensions.ClientValidation.dll
+C:\_projects\blog\Postback.Blog\bin\DataAnnotationsExtensions.dll
+C:\_projects\blog\Postback.Blog\bin\WebActivator.dll
+C:\_projects\blog\Postback.Blog\bin\StructureMap.dll
+C:\_projects\blog\Postback.Blog\bin\StructureMap.pdb
+C:\_projects\blog\Postback.Blog\bin\StructureMap.xml

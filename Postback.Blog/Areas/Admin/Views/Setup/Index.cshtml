@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Setup";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model Postback.Blog.ViewModels.InitialUserModel
+
+<h2>Start your initial setup</h2>
+@using (Html.BeginForm("index","setup"))
+{
+    @Html.EditorForModel()
+    <p>
+        <input type="submit" value="Save" />
+    </p>
+}

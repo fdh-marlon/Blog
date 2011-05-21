@@ -6,3 +6,12 @@ C:\_projects\blog\Postback.Blog.Tests\bin\Debug\Postback.Blog.pdb
 C:\_projects\blog\Postback.Blog.Tests\obj\Debug\ResolveAssemblyReference.cache
 C:\_projects\blog\Postback.Blog.Tests\obj\Debug\Postback.Blog.Tests.dll
 C:\_projects\blog\Postback.Blog.Tests\obj\Debug\Postback.Blog.Tests.pdb
+C:\_projects\blog\Postback.Blog.Tests\bin\Debug\Norm.dll
+C:\_projects\blog\Postback.Blog.Tests\bin\Debug\Norm.pdb
+C:\_projects\blog\Postback.Blog.Tests\bin\Debug\Norm.xml
+C:\_projects\blog\Postback.Blog.Tests\bin\Debug\AutoMapper.dll
+C:\_projects\blog\Postback.Blog.Tests\bin\Debug\DataAnnotationsExtensions.dll
+C:\_projects\blog\Postback.Blog.Tests\bin\Debug\DataAnnotationsExtensions.ClientValidation.dll
+C:\_projects\blog\Postback.Blog.Tests\bin\Debug\StructureMap.dll
+C:\_projects\blog\Postback.Blog.Tests\bin\Debug\StructureMap.pdb
+C:\_projects\blog\Postback.Blog.Tests\bin\Debug\StructureMap.xml
