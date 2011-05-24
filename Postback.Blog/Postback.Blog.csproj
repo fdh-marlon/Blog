@@ -34,6 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxMin">
+      <HintPath>..\packages\AjaxMin.4.13.4076.28499\lib\AjaxMin.dll</HintPath>
+    </Reference>
     <Reference Include="AutoMapper">
       <HintPath>..\packages\AutoMapper.1.1.0.118\lib\AutoMapper.dll</HintPath>
     </Reference>
@@ -42,6 +45,12 @@
     </Reference>
     <Reference Include="DataAnnotationsExtensions.ClientValidation">
       <HintPath>..\packages\DataAnnotationsExtensions.MVC3.0.6.0.0\lib\NETFramework40\DataAnnotationsExtensions.ClientValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="Jurassic">
+      <HintPath>..\packages\Knapsack.0.4.1\lib\net40\Jurassic.dll</HintPath>
+    </Reference>
+    <Reference Include="Knapsack">
+      <HintPath>..\packages\Knapsack.0.4.1\lib\net40\Knapsack.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Web.Mvc">
@@ -96,8 +105,11 @@
     <Compile Include="App\Bootstrap\IStartUpTask.cs" />
     <Compile Include="App\Data\MongoSession.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AuthenticationController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
     <Compile Include="Areas\Admin\Controllers\SetupController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
+    <Compile Include="Areas\Admin\Models\AuthenticationModel.cs" />
     <Compile Include="Areas\Admin\Models\InitialUserModel.cs" />
     <Compile Include="Areas\Api\ApiAreaRegistration.cs" />
     <Compile Include="Areas\Api\Controllers\UserController.cs" />
@@ -112,17 +124,18 @@
     <Compile Include="Models\Tag.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="scripts\app\core.js" />
+    <Content Include="Areas\Admin\Views\Authentication\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Dashboard\Index.cshtml" />
+    <None Include="README" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="js\jquery-1.6-vsdoc.js" />
-    <Content Include="js\jquery-1.6.js" />
-    <Content Include="js\jquery-1.6.min.js" />
-    <Content Include="js\jquery.validate-vsdoc.js" />
-    <Content Include="js\jquery.validate.js" />
-    <Content Include="js\jquery.validate.min.js" />
-    <Content Include="js\modernizr-1.7.js" />
-    <Content Include="js\modernizr-1.7.min.js" />
+    <Content Include="scripts\lib\jquery-1.6-vsdoc.js" />
+    <Content Include="scripts\lib\jquery-1.6.js" />
+    <Content Include="scripts\lib\jquery.validate-vsdoc.js" />
+    <Content Include="scripts\lib\jquery.validate.js" />
+    <Content Include="scripts\lib\modernizr-1.7.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -131,16 +144,14 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="css\styles.css" />
-    <Content Include="js\jquery.unobtrusive-ajax.js" />
-    <Content Include="js\jquery.unobtrusive-ajax.min.js" />
-    <Content Include="js\jquery.validate.unobtrusive.js" />
-    <Content Include="js\jquery.validate.unobtrusive.min.js" />
-    <Content Include="js\MicrosoftAjax.js" />
-    <Content Include="js\MicrosoftAjax.debug.js" />
-    <Content Include="js\MicrosoftMvcAjax.js" />
-    <Content Include="js\MicrosoftMvcAjax.debug.js" />
-    <Content Include="js\MicrosoftMvcValidation.js" />
-    <Content Include="js\MicrosoftMvcValidation.debug.js" />
+    <Content Include="scripts\lib\jquery.unobtrusive-ajax.js" />
+    <Content Include="scripts\lib\jquery.validate.unobtrusive.js" />
+    <Content Include="scripts\lib\MicrosoftAjax.js" />
+    <Content Include="scripts\lib\MicrosoftAjax.debug.js" />
+    <Content Include="scripts\lib\MicrosoftMvcAjax.js" />
+    <Content Include="scripts\lib\MicrosoftMvcAjax.debug.js" />
+    <Content Include="scripts\lib\MicrosoftMvcValidation.js" />
+    <Content Include="scripts\lib\MicrosoftMvcValidation.debug.js" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />

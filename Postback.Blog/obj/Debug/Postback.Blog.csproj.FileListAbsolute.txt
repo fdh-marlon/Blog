@@ -14,3 +14,6 @@ C:\_projects\blog\Postback.Blog\bin\WebActivator.dll
 C:\_projects\blog\Postback.Blog\bin\StructureMap.dll
 C:\_projects\blog\Postback.Blog\bin\StructureMap.pdb
 C:\_projects\blog\Postback.Blog\bin\StructureMap.xml
+C:\_projects\blog\Postback.Blog\bin\AjaxMin.dll
+C:\_projects\blog\Postback.Blog\bin\Jurassic.dll
+C:\_projects\blog\Postback.Blog\bin\Knapsack.dll

@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "PLease sign in";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model Postback.Blog.ViewModels.AuthenticationModel
+
+<h2>Yes, you. Please sign in, you.</h2>
+
+@using (Html.BeginForm("index","authentication"))
+{
+    @Html.EditorForModel()
+    <p>
+        <input type="submit" value="Sign-in" />
+    </p>
+}
