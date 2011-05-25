@@ -1,5 +1,0 @@
-<Modules>
-  <Module PersistentId="4D5A1B24-EFB5-413F-B39B-AF3B48B464FE" ModuleId="Postback.Blog" />
-  <Module PersistentId="B2F687D1-60DA-4D21-9F27-0290C5859ED7" ModuleId="Postback.Blog.Tests" />
-  <Module PersistentId="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" ModuleId="System.Web.Mvc" />
-</Modules>
