@@ -127,7 +127,6 @@
     <Content Include="scripts\app\core.js" />
     <Content Include="Areas\Admin\Views\Authentication\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Dashboard\Index.cshtml" />
-    <None Include="README" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />

@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace Postback.Blog.Areas.Admin.Controllers
 {
-    [AppInit]
+    [Authorize]
     public class UserController : Controller
     {
         public ActionResult Index()

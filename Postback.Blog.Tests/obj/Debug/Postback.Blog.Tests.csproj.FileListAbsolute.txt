@@ -15,3 +15,7 @@ C:\_projects\blog\Postback.Blog.Tests\bin\Debug\DataAnnotationsExtensions.Client
 C:\_projects\blog\Postback.Blog.Tests\bin\Debug\StructureMap.dll
 C:\_projects\blog\Postback.Blog.Tests\bin\Debug\StructureMap.pdb
 C:\_projects\blog\Postback.Blog.Tests\bin\Debug\StructureMap.xml
+C:\_projects\blog\Postback.Blog.Tests\bin\Debug\nunit.framework.dll
+C:\_projects\blog\Postback.Blog.Tests\bin\Debug\nunit.mocks.dll
+C:\_projects\blog\Postback.Blog.Tests\bin\Debug\pnunit.framework.dll
+C:\_projects\blog\Postback.Blog.Tests\bin\Debug\nunit.framework.xml

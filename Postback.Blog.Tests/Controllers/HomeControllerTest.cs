@@ -1,27 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Web.Mvc;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Postback.Blog;
+﻿using System.Web.Mvc;
+using NUnit.Framework;
 using Postback.Blog.Controllers;
 
 namespace Postback.Blog.Tests.Controllers
 {
-    [TestClass]
+    [TestFixture]
     public class HomeControllerTest
     {
-        [TestMethod]
+        [Test]
         public void Index()
         {
-            // Arrange
-            HomeController controller = new HomeController();
+            var controller = new HomeController();
 
-            // Act
-            ViewResult result = controller.Index() as ViewResult;
+            var result = controller.Index() as ViewResult;
 
-            // Assert
+            Assert.IsNotNull(result);
             Assert.AreEqual("Postback Blog", result.ViewBag.Message);
         }
     }
