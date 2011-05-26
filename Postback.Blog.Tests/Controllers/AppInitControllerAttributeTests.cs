@@ -22,14 +22,14 @@ namespace Postback.Blog.Tests.Controllers
 
             foreach(var controller in controllers)
             {
-               Assert.IsNotNull(Attribute.GetCustomAttribute(controller, typeof (AuthorizeAttribute)),controller + " has not Authorize attribute");
+                Assert.That(Attribute.GetCustomAttribute(controller, typeof(AuthorizeAttribute)), Is.Not.Null, controller + " has not Authorize attribute");
             }
         }
 
         [Test]
         public void AuthenticationControllerHasAppInitAttribute()
         {
-            Assert.IsNotNull(Attribute.GetCustomAttribute(typeof(AuthenticationController), typeof(AppInitAttribute)));
+            Assert.That(Attribute.GetCustomAttribute(typeof(AuthenticationController), typeof(AppInitAttribute)),Is.Not.Null);
         }
     }
 }

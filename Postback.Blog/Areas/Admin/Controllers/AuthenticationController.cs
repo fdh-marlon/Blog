@@ -11,13 +11,15 @@ namespace Postback.Blog.Areas.Admin.Controllers
     [AppInit]
     public class AuthenticationController : Controller
     {
-        private ICryptographer crypto;
-        private IPersistenceSession session;
+        private readonly ICryptographer crypto;
+        private readonly IPersistenceSession session;
+        private readonly IAuth auth;
 
-        public AuthenticationController(ICryptographer cryptographer, IPersistenceSession session)
+        public AuthenticationController(ICryptographer cryptographer, IPersistenceSession session, IAuth auth)
         {
             crypto = cryptographer;
             this.session = session;
+            this.auth = auth;
         }
 
         public ActionResult Index()
@@ -33,16 +35,15 @@ namespace Postback.Blog.Areas.Admin.Controllers
                 var user = session.Single<User>(u => u.Email == authentication.Email);
                 if(user !=null && crypto.GetPasswordHash(authentication.Password,user.PasswordSalt) == user.PasswordHashed)
                 {
-                    FormsAuthentication.SetAuthCookie(user.Email, true);
+                   auth.DoAuth(user.Email, true);
+                    if (Request.QueryString["ReturnUrl"] != null)
+                    {
+                        return Redirect(Request.QueryString["ReturnUrl"]);
+                    }
                     return RedirectToAction("index", "dashboard");
                 }
 
-                ModelState.AddModelError("email", "Unknown");
-                if(Request.QueryString["ReturnUr"] != null)
-                {
-                    return Redirect(Request.QueryString["ReturnUr"]);
-                }
-                return RedirectToAction("index", "authentication");
+                ModelState.AddModelError("Email", "Unknown");
             }
 
             return View("Index", new AuthenticationModel());

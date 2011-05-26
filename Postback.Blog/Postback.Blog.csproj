@@ -100,6 +100,8 @@
     <Compile Include="App\Data\Repository.cs" />
     <Compile Include="App\Bootstrap\Bootstrapper.cs" />
     <Compile Include="App\Services\Cryptographer.cs" />
+    <Compile Include="App\Services\FormsAuthWrapper.cs" />
+    <Compile Include="App\Services\IAuth.cs" />
     <Compile Include="App\Services\ICryptographer.cs" />
     <Compile Include="App\Data\IPersistenceSession.cs" />
     <Compile Include="App\Bootstrap\IStartUpTask.cs" />
@@ -124,6 +126,7 @@
     <Compile Include="Models\Tag.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="scripts\app\admin.js" />
     <Content Include="scripts\app\core.js" />
     <Content Include="Areas\Admin\Views\Authentication\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Dashboard\Index.cshtml" />

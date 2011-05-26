@@ -7,8 +7,6 @@ namespace Postback.Blog.App.Bootstrap
     {
         public void Configure()
         {
-            //IContainer container = new Container(x => x.For<IControllerActivator>().Use<StructureMapControllerActivator>());
-
             AreaRegistration.RegisterAllAreas();
 
             RegisterGlobalFilters(GlobalFilters.Filters);

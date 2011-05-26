@@ -15,10 +15,12 @@ namespace Postback.Blog.ViewModels
         public string Email { get; set; }
 
         [Required]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
 
         [Required]
         [EqualTo("Password")]
+        [DataType(DataType.Password)]
         public string PasswordConfirm { get; set; }
     }
 }

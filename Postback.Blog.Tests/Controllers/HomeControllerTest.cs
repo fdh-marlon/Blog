@@ -14,8 +14,8 @@ namespace Postback.Blog.Tests.Controllers
 
             var result = controller.Index() as ViewResult;
 
-            Assert.IsNotNull(result);
-            Assert.AreEqual("Postback Blog", result.ViewBag.Message);
+            Assert.That(result,Is.Not.Null);
+            Assert.That(result.ViewBag.Message, Is.EqualTo("Postback Blog"));
         }
     }
 }
