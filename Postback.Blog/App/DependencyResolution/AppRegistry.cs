@@ -1,4 +1,5 @@
 ﻿using Postback.Blog.App.Data;
+using Postback.Blog.App.Services;
 using StructureMap.Configuration.DSL;
 
 namespace Postback.Blog.App.DependencyResolution
@@ -9,6 +10,9 @@ namespace Postback.Blog.App.DependencyResolution
         {
             For<IPersistenceSession>()
                 .Use<MongoSession>();
+
+            For<IAuth>()
+                .Use<FormsAuthWrapper>();
         }
     }
 }
