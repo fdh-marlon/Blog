@@ -13,6 +13,9 @@ namespace Postback.Blog.App.DependencyResolution
 
             For<IAuth>()
                 .Use<FormsAuthWrapper>();
+
+            For<IMessagingService>()
+                .Use<SimpleMessagingService>();
         }
     }
 }

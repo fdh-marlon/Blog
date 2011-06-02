@@ -59,7 +59,8 @@
     <Reference Include="Norm">
       <HintPath>..\packages\NoRM.0.9.8\lib\Norm.dll</HintPath>
     </Reference>
-    <Reference Include="StructureMap">
+    <Reference Include="StructureMap, Version=2.6.2.0, Culture=neutral, PublicKeyToken=e60ad81abae3c223, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\structuremap.2.6.2\lib\StructureMap.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.Entity" />
@@ -100,6 +101,13 @@
     <Compile Include="App\Data\Repository.cs" />
     <Compile Include="App\Bootstrap\Bootstrapper.cs" />
     <Compile Include="App\Mapping\PasswordResolver.cs" />
+    <Compile Include="App\Messaging\ErrorMessage.cs" />
+    <Compile Include="App\Messaging\ExecutionResult.cs" />
+    <Compile Include="App\Messaging\HandlerFactory.cs" />
+    <Compile Include="App\Messaging\HandlerRegistry.cs" />
+    <Compile Include="App\Messaging\MailNewPasswordHandler.cs" />
+    <Compile Include="App\Messaging\NewPasswordCommand.cs" />
+    <Compile Include="App\Messaging\OutgoingMessage.cs" />
     <Compile Include="App\Services\Cryptographer.cs" />
     <Compile Include="App\Services\FormsAuthWrapper.cs" />
     <Compile Include="App\Services\IAuth.cs" />
@@ -107,6 +115,9 @@
     <Compile Include="App\Data\IPersistenceSession.cs" />
     <Compile Include="App\Bootstrap\IStartUpTask.cs" />
     <Compile Include="App\Data\MongoSession.cs" />
+    <Compile Include="App\Services\IHandler.cs" />
+    <Compile Include="App\Services\IMessagingService.cs" />
+    <Compile Include="App\Services\SimpleMessagingService.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AuthenticationController.cs" />
     <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
@@ -199,6 +210,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Admin\Views\User\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Authentication\forgotpassword.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Authentication\forgotpasswordconfirm.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

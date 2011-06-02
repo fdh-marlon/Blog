@@ -2,6 +2,7 @@
 using System.Web.Security;
 using AutoMapper;
 using Postback.Blog.App.Data;
+using Postback.Blog.App.Messaging;
 using Postback.Blog.App.Services;
 using Postback.Blog.Areas.Admin.Models;
 using Postback.Blog.Models;
@@ -14,12 +15,14 @@ namespace Postback.Blog.Areas.Admin.Controllers
         private readonly ICryptographer crypto;
         private readonly IPersistenceSession session;
         private readonly IAuth auth;
+        private readonly IMessagingService messaging;
 
-        public AuthenticationController(ICryptographer cryptographer, IPersistenceSession session, IAuth auth)
+        public AuthenticationController(ICryptographer cryptographer, IPersistenceSession session, IAuth auth, IMessagingService messaging)
         {
             crypto = cryptographer;
             this.session = session;
             this.auth = auth;
+            this.messaging = messaging;
         }
 
         public ActionResult Index()
@@ -53,6 +56,39 @@ namespace Postback.Blog.Areas.Admin.Controllers
         {
             FormsAuthentication.SignOut();
             return RedirectToAction("index", "authentication");
+        }
+
+        public ActionResult ForgotPassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult GetNewPassword(string email)
+        {
+            var user = session.Single<User>(u => u.Email == email);
+            if(user != null)
+            {
+                var generatedPassword = crypto.CreatePassword(6);
+
+                user.PasswordSalt = crypto.CreateSalt();
+                user.PasswordHashed = crypto.GetPasswordHash(generatedPassword, user.PasswordSalt);
+
+                var message = new NewPasswordMessage { User = user, NewPassword = generatedPassword };
+                messaging.Send(message);
+
+                session.Save(user);
+
+                return RedirectToAction("forgotpasswordconfirm");
+            }
+
+            ModelState.AddModelError("Email", "Unknown");
+            return View("ForgotPassword");
+        }
+
+        public ActionResult ForgotPasswordConfirm()
+        {
+            return View();
         }
     }
 }

@@ -21,7 +21,7 @@ namespace Postback.Blog.Tests.Controllers
         [Test]
         public void IndexShouldReturnViewResultWithAuthenticationModel()
         {
-            var controller = new AuthenticationController(M<ICryptographer>(),M<IPersistenceSession>(),M<IAuth>());
+            var controller = new AuthenticationController(M<ICryptographer>(),M<IPersistenceSession>(),M<IAuth>(),M<IMessagingService>());
             var result = controller.Index();
             Assert.That(result, Is.InstanceOf(typeof(ViewResult)));
 
@@ -56,7 +56,7 @@ namespace Postback.Blog.Tests.Controllers
             request.Setup(c => c.QueryString).Returns(new NameValueCollection());
             context.Setup(c => c.Request).Returns(request.Object);
 
-            var controller = new AuthenticationController(crypto.Object, session.Object,auth.Object);
+            var controller = new AuthenticationController(crypto.Object, session.Object,auth.Object,M<IMessagingService>());
             controller.ControllerContext = new ControllerContext(context.Object, new RouteData(), controller);
             
             var model = Mock.Of<AuthenticationModel>();
@@ -97,7 +97,7 @@ namespace Postback.Blog.Tests.Controllers
             request.Setup(c => c.QueryString).Returns(qstrings);
             context.Setup(c => c.Request).Returns(request.Object);
 
-            var controller = new AuthenticationController(crypto.Object, session.Object, auth.Object);
+            var controller = new AuthenticationController(crypto.Object, session.Object, auth.Object, M<IMessagingService>());
             controller.ControllerContext = new ControllerContext(context.Object, new RouteData(), controller);
 
             var model = Mock.Of<AuthenticationModel>();
@@ -114,7 +114,7 @@ namespace Postback.Blog.Tests.Controllers
         [Test]
         public void IndexActionReturnsToViewWhenAuthenticationModelIsInValid()
         {
-            var controller = new AuthenticationController(M<ICryptographer>(), M<IPersistenceSession>(),M<IAuth>());
+            var controller = new AuthenticationController(M<ICryptographer>(), M<IPersistenceSession>(), M<IAuth>(), M<IMessagingService>());
             var result = controller.Index(Mock.Of<AuthenticationModel>());
 
             var viewresult = result.AssertViewRendered();

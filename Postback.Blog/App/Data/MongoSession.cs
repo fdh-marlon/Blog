@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using Norm;
+using Norm.Collections;
 using Norm.Linq;
 using Norm.Responses;
 
@@ -108,6 +109,16 @@ namespace Postback.Blog.App.Data
                 result = r.Value;
             }
             return result;
+        }
+
+        public void InsertIntoCollection(object item, string name)
+        {
+
+            using (var db = Mongo.Create(connectionString))
+            {
+                var collection = db.GetCollection<object>(name);
+                collection.Insert(item);
+            }
         }
 
         public void Dispose()

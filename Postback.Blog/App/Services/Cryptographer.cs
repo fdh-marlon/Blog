@@ -6,6 +6,24 @@ namespace Postback.Blog.App.Services
 {
     public class Cryptographer : ICryptographer
     {
+        public string CreatePassword(int length)
+        {
+            char[] Chars = new char[] {
+            'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+            'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+            '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
+            
+            string output = string.Empty;
+            Random Random = new Random();
+
+            for (byte a = 0; a < length; a++)
+            {
+                output += Chars[Random.Next(0, 61)];
+            };
+
+            return output;
+        }
+
         /// <summary>
         /// Create salt for encrypting user passwords.  
         /// Original Source: http://davidhayden.com/blog/dave/archive/2004/02/16/157.aspx
