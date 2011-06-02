@@ -43,6 +43,9 @@
     <Reference Include="MvcContrib.TestHelper">
       <HintPath>..\packages\MvcContrib.Mvc3.TestHelper-ci.3.0.68.0\lib\MvcContrib.TestHelper.dll</HintPath>
     </Reference>
+    <Reference Include="Norm, Version=0.9.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NoRM.0.9.8\lib\Norm.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\packages\NUnit.2.5.10.11092\lib\nunit.framework.dll</HintPath>
     </Reference>
@@ -81,10 +84,13 @@
     <Compile Include="Controllers\AppInitControllerAttributeTests.cs" />
     <Compile Include="Controllers\AuthenticationControllerTests.cs" />
     <Compile Include="BaseTest.cs" />
+    <Compile Include="Controllers\UserControllerTest.cs" />
+    <Compile Include="Controllers\SetupControllerTest.cs" />
     <Compile Include="Controllers\DashboardControllerTests.cs" />
     <Compile Include="DependencyResolution\IoC.cs" />
     <Compile Include="DependencyResolution\SmDependencyResolver.cs" />
     <Compile Include="DI\DependencyRegistrationTests.cs" />
+    <Compile Include="Mapping\UserMappingtests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
     <Compile Include="Services\CryptograhperTests.cs" />
@@ -100,6 +106,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

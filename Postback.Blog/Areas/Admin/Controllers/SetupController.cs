@@ -3,8 +3,8 @@ using System.Web.Mvc;
 using AutoMapper;
 using Postback.Blog.App.Data;
 using Postback.Blog.App.Services;
+using Postback.Blog.Areas.Admin.Models;
 using Postback.Blog.Models;
-using Postback.Blog.ViewModels;
 
 namespace Postback.Blog.Areas.Admin.Controllers
 {
@@ -33,7 +33,6 @@ namespace Postback.Blog.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 var entity = Mapper.Map<InitialUserModel, User>(user);
-                entity.HashPassword(new Cryptographer(), user.Password);
                 session.Add<User>(entity);
 
                 return RedirectToAction("index", "authentication");

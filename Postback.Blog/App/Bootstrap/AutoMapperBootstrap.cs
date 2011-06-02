@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Postback.Blog.App.Config;
+using Postback.Blog.App.Mapping;
 
 namespace Postback.Blog.App.Bootstrap
 {

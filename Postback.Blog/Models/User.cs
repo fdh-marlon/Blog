@@ -1,18 +1,23 @@
-﻿using System;
+﻿using System.Web.Mvc;
 using Postback.Blog.App.Services;
 
 namespace Postback.Blog.Models
 {
     public class User : Entity
     {
-        public User():base()
+        public User()
+            : base()
         {
         }
 
-        public void HashPassword(ICryptographer cryptographer, string password)
+        public User(string password):base()
         {
-            PasswordSalt = cryptographer.CreateSalt();
-            PasswordHashed = cryptographer.GetPasswordHash(password, PasswordSalt);
+            if (!string.IsNullOrEmpty(password))
+            {
+                var cryptographer = DependencyResolver.Current.GetService<ICryptographer>();
+                PasswordSalt = cryptographer.CreateSalt();
+                PasswordHashed = cryptographer.GetPasswordHash(password, PasswordSalt);
+            }
         }
 
         public string Email { get; set; }

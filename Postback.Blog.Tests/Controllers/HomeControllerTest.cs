@@ -8,7 +8,7 @@ namespace Postback.Blog.Tests.Controllers
     public class HomeControllerTest
     {
         [Test]
-        public void Index()
+        public void IndexShouldReturnView()
         {
             var controller = new HomeController();
 

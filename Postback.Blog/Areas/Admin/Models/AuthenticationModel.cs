@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using DataAnnotationsExtensions;
 
-namespace Postback.Blog.ViewModels
+namespace Postback.Blog.Areas.Admin.Models
 {
     public class AuthenticationModel
     {

@@ -3,8 +3,8 @@ using System.Web.Security;
 using AutoMapper;
 using Postback.Blog.App.Data;
 using Postback.Blog.App.Services;
+using Postback.Blog.Areas.Admin.Models;
 using Postback.Blog.Models;
-using Postback.Blog.ViewModels;
 
 namespace Postback.Blog.Areas.Admin.Controllers
 {

@@ -59,6 +59,14 @@ namespace Postback.Blog.App.Data
             return db.GetCollection<T>().AsQueryable();
         }
 
+        public void Save<T>(T item) where T : class, new()
+        {
+            using (var db = Mongo.Create(connectionString))
+            {
+                db.GetCollection<T>().Save(item);
+            }
+        }
+
         public void Add<T>(T item) where T : class, new()
         {
             using (var db = Mongo.Create(connectionString))

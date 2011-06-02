@@ -1,17 +1,20 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 using DataAnnotationsExtensions;
+using Norm;
 
 namespace Postback.Blog.Areas.Admin.Models
 {
-    public class InitialUserModel
+    public class UserEditModel
     {
+        public ObjectId Id { get; set; }
+
         [Required]
         public string Name { get; set; }
 
         [Required]
         [Email]
-        [Remote("isunique","user","api")]
+        [Remote("isunique", "user", "api", AdditionalFields = "Id")]
         public string Email { get; set; }
 
         [Required]

@@ -8,18 +8,18 @@ namespace Postback.Blog.Tests
 {
     public class SmDependencyResolver : IDependencyResolver {
 
-        private readonly IContainer _container;
+        private readonly IContainer container;
 
         public SmDependencyResolver(IContainer container) {
-            _container = container;
+            this.container = container;
         }
 
         public object GetService(Type serviceType) {
             if (serviceType == null) return null;
             try {
                   return serviceType.IsAbstract || serviceType.IsInterface
-                           ? _container.TryGetInstance(serviceType)
-                           : _container.GetInstance(serviceType);
+                           ? container.TryGetInstance(serviceType)
+                           : container.GetInstance(serviceType);
             }
             catch {
 
@@ -28,7 +28,7 @@ namespace Postback.Blog.Tests
         }
 
         public IEnumerable<object> GetServices(Type serviceType) {
-            return _container.GetAllInstances(serviceType).Cast<object>();
+            return container.GetAllInstances(serviceType).Cast<object>();
         }
     }
 }

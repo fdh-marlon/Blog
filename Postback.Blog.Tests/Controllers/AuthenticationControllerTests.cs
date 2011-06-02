@@ -11,7 +11,7 @@ using Postback.Blog.App.Data;
 using Postback.Blog.App.Services;
 using Postback.Blog.Areas.Admin.Controllers;
 using Postback.Blog.Models;
-using Postback.Blog.ViewModels;
+using Postback.Blog.Areas.Admin.Models;
 
 namespace Postback.Blog.Tests.Controllers
 {
