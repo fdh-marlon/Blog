@@ -1,0 +1,16 @@
+﻿@model Postback.Blog.Areas.Admin.Models.PostEditModel
+
+@{
+    
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("edit","post"))
+{
+    @Html.EditorForModel()
+    <p>
+        <input type="submit" value="Save" />
+    </p>
+}
+    @Html.ActionLink("Back to List", "Index")
+</div>

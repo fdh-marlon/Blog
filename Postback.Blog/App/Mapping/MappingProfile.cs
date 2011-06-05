@@ -1,4 +1,5 @@
-﻿using Postback.Blog.Areas.Admin.Models;
+﻿using System;
+using Postback.Blog.Areas.Admin.Models;
 using Postback.Blog.Models;
 
 namespace Postback.Blog.App.Mapping
@@ -23,8 +24,15 @@ namespace Postback.Blog.App.Mapping
                 .ConstructUsing(u => new User(u.Password));
 
             CreateMap<User, UserEditModel>()
-                .ForMember(u => u.Password, o => o.Ignore())
                 .ForMember(u => u.PasswordConfirm, o => o.Ignore());
+
+            CreateMap<Post, PostViewModel>()
+                .ForMember(p => p.Created, o => o.AddFormatter<ReadableDateFormatter>());
+
+            CreateMap<PostEditModel, Post>()
+                .ForMember(p => p.Created, o => o.UseValue(DateTime.Now))
+                .ForMember(p => p.Author, o => o.Ignore())
+                .ConstructUsing(p => new Post(p.Title));
         }
     }
 }

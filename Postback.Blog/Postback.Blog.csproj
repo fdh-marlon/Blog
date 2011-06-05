@@ -101,6 +101,7 @@
     <Compile Include="App\Data\Repository.cs" />
     <Compile Include="App\Bootstrap\Bootstrapper.cs" />
     <Compile Include="App\Mapping\PasswordResolver.cs" />
+    <Compile Include="App\Mapping\ReadableDateFormatter.cs" />
     <Compile Include="App\Messaging\ErrorMessage.cs" />
     <Compile Include="App\Messaging\ExecutionResult.cs" />
     <Compile Include="App\Messaging\HandlerFactory.cs" />
@@ -120,17 +121,24 @@
     <Compile Include="App\Services\SimpleMessagingService.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AuthenticationController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PostController.cs" />
     <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
     <Compile Include="Areas\Admin\Controllers\SetupController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Areas\Admin\Models\AuthenticationModel.cs" />
+    <Compile Include="Areas\Admin\Models\PostViewModel.cs" />
+    <Compile Include="Areas\Admin\Models\PostEditModel.cs" />
     <Compile Include="Areas\Admin\Models\UserEditModel.cs" />
     <Compile Include="Areas\Admin\Models\InitialUserModel.cs" />
     <Compile Include="Areas\Admin\Models\UserViewModel.cs" />
     <Compile Include="Areas\Api\ApiAreaRegistration.cs" />
+    <Compile Include="Areas\Api\Controllers\PostController.cs" />
     <Compile Include="Areas\Api\Controllers\UserController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="App\DependencyResolution\StructureMapDependencyResolver.cs" />
+    <Compile Include="Extensions\DateTimeExtensions.cs" />
+    <Compile Include="Extensions\PrimitiveExtensions.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -216,6 +224,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Admin\Views\Authentication\forgotpasswordconfirm.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Post\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Post\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\EditorTemplates\Html.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

@@ -10,7 +10,7 @@ namespace Postback.Blog.Models
         {
         }
 
-        public User(string password):base()
+        public User(string password):this()
         {
             if (!string.IsNullOrEmpty(password))
             {
