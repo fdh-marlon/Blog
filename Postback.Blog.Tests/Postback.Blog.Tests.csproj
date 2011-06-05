@@ -92,7 +92,10 @@
     <Compile Include="DependencyResolution\SmDependencyResolver.cs" />
     <Compile Include="DI\DependencyRegistrationTests.cs" />
     <Compile Include="Extensions\StringExtensionTests.cs" />
+    <Compile Include="Mapping\PostMappingtests.cs" />
     <Compile Include="Mapping\UserMappingtests.cs" />
+    <Compile Include="Models\PostTests.cs" />
+    <Compile Include="Models\TagTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
     <Compile Include="Services\CryptograhperTests.cs" />
@@ -109,9 +112,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

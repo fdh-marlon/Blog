@@ -100,7 +100,7 @@
     <Compile Include="App\Data\IRepository.cs" />
     <Compile Include="App\Data\Repository.cs" />
     <Compile Include="App\Bootstrap\Bootstrapper.cs" />
-    <Compile Include="App\Mapping\PasswordResolver.cs" />
+    <Compile Include="App\Mapping\TagResolver.cs" />
     <Compile Include="App\Mapping\ReadableDateFormatter.cs" />
     <Compile Include="App\Messaging\ErrorMessage.cs" />
     <Compile Include="App\Messaging\ExecutionResult.cs" />

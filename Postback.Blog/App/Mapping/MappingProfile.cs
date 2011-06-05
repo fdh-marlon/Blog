@@ -24,6 +24,7 @@ namespace Postback.Blog.App.Mapping
                 .ConstructUsing(u => new User(u.Password));
 
             CreateMap<User, UserEditModel>()
+                .ForMember(u => u.Password, o => o.Ignore())
                 .ForMember(u => u.PasswordConfirm, o => o.Ignore());
 
             CreateMap<Post, PostViewModel>()
@@ -32,6 +33,9 @@ namespace Postback.Blog.App.Mapping
             CreateMap<PostEditModel, Post>()
                 .ForMember(p => p.Created, o => o.UseValue(DateTime.Now))
                 .ForMember(p => p.Author, o => o.Ignore())
+                .ForMember(p => p.Uri, o => o.Ignore())
+                .ForMember(p => p.Comments, o => o.Ignore())
+                .ForMember(p => p.Tags, o => o.ResolveUsing<TagResolver>())
                 .ConstructUsing(p => new Post(p.Title));
         }
     }
