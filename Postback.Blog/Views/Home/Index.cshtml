@@ -1,8 +1,30 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Posts";
+    Layout = "../Shared/_Layout.cshtml";
 }
 
-<h2>@ViewBag.Message</h2>
-<p>
-    To learn more about ASP.NET MVC visit <a href="http://asp.net/mvc" title="ASP.NET MVC Website">http://asp.net/mvc</a>.
-</p>
+@Html.ActionLink("New", "edit")
+
+<section>
+@foreach(var post in Model)
+{
+    <article>
+        <header>
+            <h1>@post.Title</h1>
+            @{
+               var date = (DateTime)post.Created;//Conversion is needed to be able to use the extension method
+             }
+            <p><time pubdate datetime="@post.Created">@date.ToLocalTime().FormatToSmartTimeSpan()</time></p>
+        </header>
+        @post.Body
+        <footer>
+            <ul>
+                @foreach (var tag in post.Tags)
+                { 
+                    <li>@tag.Name</li>
+                }
+            </ul>
+        </footer>
+    </article>
+}
+</section>

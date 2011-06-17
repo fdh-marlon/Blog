@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Postback.Blog.Areas.Admin.Models;
 using Postback.Blog.Models;
 
@@ -37,6 +38,10 @@ namespace Postback.Blog.App.Mapping
                 .ForMember(p => p.Comments, o => o.Ignore())
                 .ForMember(p => p.Tags, o => o.ResolveUsing<TagResolver>())
                 .ConstructUsing(p => new Post(p.Title));
+
+            CreateMap<Post, PostEditModel>()
+                .ForMember(m => m.Tags,
+                           o => o.MapFrom(s => s.Tags.Select(t => t.Name).Aggregate<string>((a, b) => a + "," + b)));
         }
     }
 }

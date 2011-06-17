@@ -7,6 +7,8 @@ namespace Postback.Blog.Models
     {
         public Post():base()
         {
+            Tags = new List<Tag>();
+            Comments = new List<Comment>();
         }
 
         public Post(string title):this()
